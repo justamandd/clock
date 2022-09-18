@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root {
+    --bg-light: #fff;
+    --text-color-light: #141414;
+    --btn-toggle-theme-light: #141414;
+
+    --bg-dark: #141414;
+    --text-color-dark: #fff;
+    --btn-toggle-theme-dark: #fff;
+}
+
+@media (prefers-color-scheme: dark){
+    :root {
+        --bg: var(--bg-dark);
+        --text-color: var(--text-color-dark);
+        --btn-toggle-theme: var(--btn-toggle-theme-dark);
+    }
+}
+
+@media (prefers-color-scheme: light){
+    :root {
+        --bg: var(--bg-light);
+        --text-color: var(--text-color-light);
+        --btn-toggle-theme: var(--btn-toggle-theme-light);
+    }
+}
+
+[color-scheme="dark"] {
+    --bg: var(--bg-dark);
+    --text-color: var(--text-color-dark);
+    --btn-toggle-theme: var(--btn-toggle-theme-dark);
+}
+
+[color-scheme="light"] {
+    --bg: var(--bg-light);
+    --text-color: var(--text-color-light);
+    --btn-toggle-theme: var(--btn-toggle-theme-light);
+}
+
+
+
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    font-family: 'Roboto', sans-serif;
+}
+
+span {
+    color: var(--text-color);
+    font-size: 18rem;
+    font-weight: bolder;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 50vw;
+    padding: 0 25vw;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: end;
+}
+
+.toggle-theme-container {
+    position: fixed;
+    margin: 20px 20px 0 0;
+    width: 60px;
+    height: 60px;
+    background-color: var(--btn-toggle-theme);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.to-light.active,
+.to-dark.active
+{
+    display: flex;
+}
+
+.to-dark,
+.to-light
+{
+    display: none;
+    width: 70%;
+    height: 70%;
+}
+
+.to-dark {
+    filter: invert(200%);
+    -webkit-filter: invert(200%);
+}
